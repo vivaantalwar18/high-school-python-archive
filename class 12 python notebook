@@ -1,0 +1,1889 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM0UnYxySuEFoMYOlyUnlPm",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/vivaantalwar18/high-school-python-archive/blob/main/class%2012%20python%20notebook\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iXY5s-ixyh6r",
+        "outputId": "81a16bc8-3b08-4d6c-9e99-af34a331a021"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0 1 1 2 3 5 8 13 "
+          ]
+        }
+      ],
+      "source": [
+        "a,b=0,1\n",
+        "print(a,b,end=\" \")\n",
+        "while b<13:\n",
+        "    a,b=b,a+b\n",
+        "    print(b,end=\" \")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=int(input(\"Enter the first no.:  \"))\n",
+        "y=int(input(\"Enter second no.:  \"))\n",
+        "if x>y:\n",
+        "\tsmaller=y\n",
+        "else:\n",
+        "\tsmaller=x\n",
+        "i=1\n",
+        "while (i<=smaller):\n",
+        "\tif((x%i==0) and (y%i==0)):\n",
+        "\t\tHCF=i\n",
+        "\ti=i+1\n",
+        "print(\"HCF = \",HCF)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PcafAlzd00FS",
+        "outputId": "35f8600e-8115-4c90-9548-ec710baaad27"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the first no.:  30\n",
+            "Enter second no.:  22\n",
+            "HCF =  2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=int(input(\"Enter first no.: \"))\n",
+        "b=int(input(\"enter second no: \"))\n",
+        "if a>b:\n",
+        "    l=a\n",
+        "else:\n",
+        "    l=b\n",
+        "lcm=l\n",
+        "while True:\n",
+        "    if l%a==0 and l%b==0:\n",
+        "        lcm=l\n",
+        "        break\n",
+        "    l=l+1\n",
+        "print(\"LCM IS =\",lcm)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "G5Xm7cNW2m2Y",
+        "outputId": "5d34c3e9-cc48-41cf-c0cb-1624414f3ccd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter first no.: 50\n",
+            "enter second no: 77\n",
+            "LCM IS = 3850\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=[]\n",
+        "for i in range(1,20):\n",
+        "\tfor j in range(2,i):\n",
+        "\t\tif i%j==0:\n",
+        "\t\t\tbreak\n",
+        "\telse:\n",
+        "\t\ta.append(i)\n",
+        "print(a)\n",
+        "for p in a:\n",
+        "\tfor q in a:\n",
+        "\t\tif p+q in a:\n",
+        "\t\t\tprint(p,q)\n",
+        "\t\telse:\n",
+        "\t\t\tcontinue"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QmEz-cq35X2r",
+        "outputId": "e9e8511e-0500-4a15-acc3-143196ddf1da"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1, 2, 3, 5, 7, 11, 13, 17, 19]\n",
+            "1 1\n",
+            "1 2\n",
+            "2 1\n",
+            "2 3\n",
+            "2 5\n",
+            "2 11\n",
+            "2 17\n",
+            "3 2\n",
+            "5 2\n",
+            "11 2\n",
+            "17 2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = int(input(\"enter no to check\"))\n",
+        "limit = a//2\n",
+        "sum = 0\n",
+        "for i in range(1,limit+1,1):\n",
+        "\tif(a%i == 0):\n",
+        "\t\tsum = sum + i\n",
+        "\telse:\n",
+        "\t\tcontinue\n",
+        "if sum==a:\n",
+        "\tprint(\"Perfect Number\")\n",
+        "else:\n",
+        "\tprint(\"Not Perfect Number\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0X-fSA7w6mQ9",
+        "outputId": "3192d612-84fb-426f-b331-adece9cc4370"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "enter no to check66\n",
+            "Not Perfect Number\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"The prime no. are\",end=\" \")\n",
+        "for i in range(1,20):\n",
+        "\tfor j in range(2,i):\n",
+        "\t\tif i%j==0:\n",
+        "\t\t\tbreak\n",
+        "\telse:\n",
+        "\t\tprint(i,end=\" \")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NMaXb1od7jbR",
+        "outputId": "7761c2da-cff3-4d19-ac1c-3d1c4135ffc8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The prime no. are 1 2 3 5 7 11 13 17 19 "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "year=int(input(\"Enter year: \"))\n",
+        "if year%4==0 and year%100!=0:\n",
+        "\tprint(year, \"is a leap year\")\n",
+        "elif year%100==0:\n",
+        "\tprint(year, \"is not a leap year\")\n",
+        "elif year%400==0:\n",
+        "\tprint(year, \"is a leap year\")\n",
+        "else:\n",
+        "\tprint(year, \"is not a leap year\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CGrLgZZT-dgR",
+        "outputId": "860aba6d-d283-4cc1-d906-780744108ab7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter year: 2008\n",
+            "2008 is a leap year\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=[55,2,33,64,11,123,32,56]\n",
+        "l=len(a)\n",
+        "for i in range(0,l):\n",
+        "\tfor j in range(0,l-1):\n",
+        "\t\tif a[j]>a[j+1]:\n",
+        "\t\t\ttemp=a[j]\n",
+        "\t\t\ta[j]=a[j+1]\n",
+        "\t\t\ta[j+1]=temp\n",
+        "print(a)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Bpy4TY9n_9oT",
+        "outputId": "3aa4957a-ed23-4c23-c6e3-42cd6518ebed"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[2, 11, 32, 33, 55, 56, 64, 123]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "N=int(input(\"EnterN-->\"))\n",
+        "for i in range(0, N+1, 1):\n",
+        "\tif i**2  == N:\n",
+        "\t\tbreak\n",
+        "\telse:\n",
+        "\t\tif i%5 ==0:\n",
+        "\t\t\tcontinue\n",
+        "\tprint (i, end=' ')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_pPH6OjYDOGL",
+        "outputId": "0bd9489a-72cd-44a8-8d4d-ab28717c4ddc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "EnterN-->6\n",
+            "1 2 3 4 6 "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "i=1\n",
+        "print(\"Multiplication table\")\n",
+        "print(\"-\"*50)\n",
+        "while i<11:\n",
+        "  n=1\n",
+        "  while n<=10:\n",
+        "    print(\"%4d\" %(i*n),end=\" \")\n",
+        "    n+=1\n",
+        "  print(\"\")\n",
+        "  i+=1\n",
+        "print(\"-\"*50)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "l7s30SVJEeNW",
+        "outputId": "e59990ca-c291-474a-906e-74a1d6f913b3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Multiplication table\n",
+            "--------------------------------------------------\n",
+            "   1    2    3    4    5    6    7    8    9   10 \n",
+            "   2    4    6    8   10   12   14   16   18   20 \n",
+            "   3    6    9   12   15   18   21   24   27   30 \n",
+            "   4    8   12   16   20   24   28   32   36   40 \n",
+            "   5   10   15   20   25   30   35   40   45   50 \n",
+            "   6   12   18   24   30   36   42   48   54   60 \n",
+            "   7   14   21   28   35   42   49   56   63   70 \n",
+            "   8   16   24   32   40   48   56   64   72   80 \n",
+            "   9   18   27   36   45   54   63   72   81   90 \n",
+            "  10   20   30   40   50   60   70   80   90  100 \n",
+            "--------------------------------------------------\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def computeavg(list1,n):\n",
+        "  t=0\n",
+        "  for marks in list1:\n",
+        "    t=t+marks\n",
+        "  avg=t/n\n",
+        "  return avg\n",
+        "list1=[]\n",
+        "print(\"How many students marks u want to enter: \")\n",
+        "n=int(input())\n",
+        "for i in range(0,n):\n",
+        "  print(\"enter marks of students\",(i+1),\":\")\n",
+        "  marks = int(input())\n",
+        "  list1.append(marks)\n",
+        "avg=computeavg(list1,n)\n",
+        "print(\"avg marks of\",n,\"students is:\",avg)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "F68kSMScGP_m",
+        "outputId": "b1966cb7-1475-4688-fd50-bdec8b84de8a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "How many students marks u want to enter: \n",
+            "2\n",
+            "enter marks of students 1 :\n",
+            "100\n",
+            "enter marks of students 2 :\n",
+            "98\n",
+            "avg marks of 2 students is: 99.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def menuprog():\n",
+        "    def plus():\n",
+        "        x=int(input(\"Enter the value of x:\"))\n",
+        "        y=int(input(\"Enter the value of y:\"))\n",
+        "        s=x+y\n",
+        "        print(\"Sum of x and y is:\",s)\n",
+        "    def prod():\n",
+        "        x=int(input(\"Enter the value of x:\"))\n",
+        "        y=int(input(\"Enter the value of y:\"))\n",
+        "        p=x*y\n",
+        "        print(\"Product of x and y is:\",p)\n",
+        "    ch=int(input(\"Enter 1 for addition and 2 for product\"))\n",
+        "    if ch==1:\n",
+        "        plus()\n",
+        "    elif ch==2:\n",
+        "        prod()\n",
+        "    else:\n",
+        "        print(\"Invalid choice\")\n",
+        "menuprog()"
+      ],
+      "metadata": {
+        "id": "hl_ESAybJFcH",
+        "outputId": "0e7e5d6b-5898-47a8-bc34-ad0485bccbe2",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter 1 for addition and 2 for product1\n",
+            "Enter the value of x:24\n",
+            "Enter the value of y:10\n",
+            "Sum of x and y is: 34\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Developing a power function using default parameter\n",
+        "def power(n, p=2):\n",
+        "    s = 1\n",
+        "    for i in range(1, p+1):\n",
+        "        s = s * n\n",
+        "    return s\n",
+        "def main():\n",
+        "    num = int(input(\"Enter the number: \"))\n",
+        "    p = int(input(\"Enter the power to be calculated: \"))\n",
+        "    result = power(num, p)\n",
+        "    print(\"Result when the power is given:\", result)\n",
+        "    result = power(num)\n",
+        "    print(\"Result when the power is not given (default 2):\", result)\n",
+        "main()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7DWRWda11zUJ",
+        "outputId": "c32a1c65-0fce-43f6-fd7f-55871f61c4a4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the number: 21\n",
+            "Enter the power to be calculated: 2\n",
+            "Result when the power is given: 441\n",
+            "Result when the power is not given (default 2): 441\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "def create_file():\n",
+        "    with open(\"MAGIC.TXT\", \"w\") as f:\n",
+        "        f.write(\"The magic of 5 young friends can be compared with 3 children.\\n\")\n",
+        "        f.write(\"The young ones are in age 18 and the children are below 10.\")\n",
+        "    print(\"MAGIC.TXT file created successfully with content!\\n\")\n",
+        "def count_file():\n",
+        "    txtfile = \"MAGIC.TXT\"\n",
+        "    if os.path.isfile(txtfile):\n",
+        "        with open(txtfile, \"r\") as fb:\n",
+        "            alphabets = digits = spaces = lines = 0\n",
+        "            print(\"File contents are:\\n\")\n",
+        "            while True:\n",
+        "                line = fb.readline()\n",
+        "                if not line:\n",
+        "                    break\n",
+        "                print(line, end=\"\")\n",
+        "                lines += 1\n",
+        "                for ch in line:\n",
+        "                    if ch.isalpha():\n",
+        "                        alphabets += 1\n",
+        "                    elif ch.isdigit():\n",
+        "                        digits += 1\n",
+        "                    elif ch.isspace():\n",
+        "                        spaces += 1\n",
+        "        print(\"\\n\")\n",
+        "        print(\"Total lines:\", lines)\n",
+        "        print(\"Total alphabets are:\", alphabets)\n",
+        "        print(\"Total digits are:\", digits)\n",
+        "        print(\"Total spaces are:\", spaces)\n",
+        "    else:\n",
+        "        print(\"File does not exist!\")\n",
+        "create_file()\n",
+        "count_file()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bgnzeKTZ5XPX",
+        "outputId": "09e721f4-ff5b-4fc5-b5ac-459f8db1608f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "MAGIC.TXT file created successfully with content!\n",
+            "\n",
+            "File contents are:\n",
+            "\n",
+            "The magic of 5 young friends can be compared with 3 children.\n",
+            "The young ones are in age 18 and the children are below 10.\n",
+            "\n",
+            "Total lines: 2\n",
+            "Total alphabets are: 89\n",
+            "Total digits are: 6\n",
+            "Total spaces are: 24\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "notes_dict = {\n",
+        "    1: \"India is the fastest growing economy.\",\n",
+        "    2: \"Kids are the future of the nation.\",\n",
+        "    3: \"Kindness is a great virtue.\",\n",
+        "    4: \"The whole world is looking at India as a great market.\",\n",
+        "    5: \"Keep working hard!\"\n",
+        "}\n",
+        "def createFile():\n",
+        "    with open(\"MYNOTES.TXT\", \"w\") as f:\n",
+        "        for key in notes_dict:\n",
+        "            f.write(notes_dict[key] + \"\\n\")\n",
+        "    print(\"MYNOTES.TXT created successfully\\n\")\n",
+        "def LinesWithK():\n",
+        "    if os.path.isfile(\"MYNOTES.TXT\"):\n",
+        "        fb = open(\"MYNOTES.TXT\", \"r\")\n",
+        "        print(\"The lines are ...\")\n",
+        "        while True:\n",
+        "            line = fb.readline()\n",
+        "            line = line.rstrip()\n",
+        "            if not line:\n",
+        "                break\n",
+        "            if line[0].upper() == 'K':\n",
+        "                print(line)\n",
+        "        fb.close()\n",
+        "    else:\n",
+        "        print(\"Source file does not exist!\")\n",
+        "createFile()\n",
+        "LinesWithK()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8mR7L7IXAXFP",
+        "outputId": "fad6cb65-5756-44a1-ca82-83a0e584b6a7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "MYNOTES.TXT created successfully\n",
+            "\n",
+            "The lines are ...\n",
+            "Kids are the future of the nation.\n",
+            "Kindness is a great virtue.\n",
+            "Keep working hard!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import csv\n",
+        "f = open(\"results.csv\", \"w\", newline='')\n",
+        "writer = csv.writer(f)\n",
+        "examdata = [[\"Name\", \"Marks\", \"Rank\"],\n",
+        "            [\"Sheela\", 450, 1],\n",
+        "            [\"Rohan\", 300, 2],\n",
+        "            [\"Akash\", 260, 3]]\n",
+        "writer.writerows(examdata)\n",
+        "f.close()\n",
+        "with open(\"results.csv\", \"r\") as NF:\n",
+        "    NewReader = csv.reader(NF)\n",
+        "    for rec in NewReader:\n",
+        "        print(rec[0], rec[1], rec[2])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_zgUeBDJCu6U",
+        "outputId": "df4bd3ef-631a-4beb-bd53-8aaaf6445a04"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Name Marks Rank\n",
+            "Sheela 450 1\n",
+            "Rohan 300 2\n",
+            "Akash 260 3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def count_words():\n",
+        "    file_name = \"my_text_file.txt\"\n",
+        "    try:\n",
+        "        with open(file_name, \"r\") as f:\n",
+        "            content = f.read()\n",
+        "            words = content.split()\n",
+        "            print(f\"Total words in '{file_name}': {len(words)}\")\n",
+        "    except FileNotFoundError:\n",
+        "        print(f\"Error: File '{file_name}' not found.\")\n",
+        "\n",
+        "count_words()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-g0YDy91FEkZ",
+        "outputId": "6b4cfb3a-ffd5-4f15-b980-67b9fdb43876"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Error: File 'my_text_file.txt' not found.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import csv\n",
+        "def grade_from_avg(avg):\n",
+        "    if avg >= 90: return \"A+\"\n",
+        "    if avg >= 80: return \"A\"\n",
+        "    if avg >= 70: return \"B\"\n",
+        "    if avg >= 60: return \"C\"\n",
+        "    return \"D\"\n",
+        "def process_students(infile, outfile\n",
+        "                       out_rows = []\n",
+        "    with open(infile, newline='') as f:\n",
+        "        reader = csv.DictReader(f)\n",
+        "        for row in reader:\n",
+        "            marks = [int(row[k]) for k in row if k.startswith(\"Sub\")]\n",
+        "            avg = sum(marks)/len(marks) if marks else 0\n",
+        "            row[\"Average\"] = f\"{avg:.2f}\"\n",
+        "            row[\"Grade\"] = grade_from_avg(avg)\n",
+        "            out_rows.append(row)\n",
+        "    fieldnames = list(out_rows[0].keys()) if out_rows else []\n",
+        "    with open(outfile, 'w', newline='') as f:\n",
+        "        writer = csv.DictWriter(f, fieldnames=fieldnames)\n",
+        "        writer.writeheader()\n",
+        "        writer.writerows(out_rows)\n",
+        "    print(f\"Wrote processed data to {outfile}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 110
+        },
+        "id": "kokKR7F9HD8J",
+        "outputId": "cca1d623-1a4f-4d92-8b3c-c831ed1526df"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "invalid non-printable character U+00A0 (ipython-input-3434865946.py, line 3)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipython-input-3434865946.py\"\u001b[0;36m, line \u001b[0;32m3\u001b[0m\n\u001b[0;31m    if avg >= 90: return \"A+\"\u001b[0m\n\u001b[0m    ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid non-printable character U+00A0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "def CreateIndiaFile():\n",
+        "    f = open(\"INDIA.TXT\", \"w\")\n",
+        "    text = input(\"Enter text for INDIA.TXT file:\\n\")\n",
+        "    f.write(text)\n",
+        "    f.close()\n",
+        "    print(\"File created successfully.\\n\")\n",
+        "def WordIndia():\n",
+        "    CountWord = 0\n",
+        "    if os.path.isfile('INDIA.TXT'):\n",
+        "        fobj = open('INDIA.TXT', 'r')\n",
+        "        lines = fobj.read()\n",
+        "        while lines:\n",
+        "            words = lines.split()\n",
+        "            for w in words:\n",
+        "                if w == \"India\":\n",
+        "                    CountWord = CountWord + 1\n",
+        "            lines = fobj.read()\n",
+        "        print(\"Total number of words:\", CountWord)\n",
+        "        fobj.close()\n",
+        "    else:\n",
+        "        print(\"File does not exist.\")\n",
+        "CreateIndiaFile()\n",
+        "WordIndia()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MlGjYf-dHPux",
+        "outputId": "315ccddf-ad98-493e-d087-d39cc6eb40db"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter text for INDIA.TXT file:\n",
+            "hello\n",
+            "File created successfully.\n",
+            "\n",
+            "Total number of words: 0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "def CreateFile():\n",
+        "    f = open(\"INDIA.TXT\", \"w\")\n",
+        "    print(\"Enter text for the file (type END to stop):\")\n",
+        "    while True:\n",
+        "        line = input()\n",
+        "        if line == \"END\":\n",
+        "            break\n",
+        "        f.write(line + \"\\n\")\n",
+        "    f.close()\n",
+        "    print(\"File created successfully.\\n\")\n",
+        "def WordIndia():\n",
+        "    CountWord = 0\n",
+        "    if os.path.isfile(\"INDIA.TXT\"):\n",
+        "        fobj = open(\"INDIA.TXT\", \"r\")\n",
+        "        lines = fobj.read()\n",
+        "        while lines:\n",
+        "            words = lines.split()\n",
+        "            for w in words:\n",
+        "                if w == \"India\":\n",
+        "                    CountWord = CountWord + 1\n",
+        "            lines = fobj.read()\n",
+        "        print(\"Total number of words:\", CountWord)\n",
+        "        fobj.close()\n",
+        "    else:\n",
+        "        print(\"File does not exist.\")\n",
+        "CreateFile()\n",
+        "WordIndia()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LpQ9e07sPrm7",
+        "outputId": "49af6ab2-17c8-40d4-fd8f-106a2185613a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter text for the file (type END to stop):\n",
+            "END\n",
+            "File created successfully.\n",
+            "\n",
+            "Total number of words: 0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "def create_file():\n",
+        "    with open(\"SHIVAJI.TXT\", \"w\") as f:\n",
+        "        f.write(\"Shivaji was born in the family of Bhonsle.\\n\")\n",
+        "        f.write(\"He was devoted to his mother Jijabai.\\n\")\n",
+        "        f.write(\"India at that time was under Muslim rule.\\n\")\n",
+        "def Count_Line():\n",
+        "    myfile = open(\"SHIVAJI.TXT\", \"r\")\n",
+        "    count = 0\n",
+        "    while True:\n",
+        "        line = myfile.readline()\n",
+        "        if len(line) == 0:\n",
+        "            break\n",
+        "        count += 1\n",
+        "    myfile.close()\n",
+        "    print(\"Total number of lines:\", count)\n",
+        "create_file()\n",
+        "Count_Line()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aiiOAfPSSpc7",
+        "outputId": "5bd737a8-2692-47aa-a6fe-c42847a863db"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Total number of lines: 3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pickle\n",
+        "def WriteRec():\n",
+        "    fobj = open(\"PATIENTS.dat\", \"ab\")\n",
+        "    try:\n",
+        "        n = int(input(\"How many records to add? : \"))\n",
+        "        for i in range(n):\n",
+        "            print(\"\\nEnter patient details:\")\n",
+        "            pid = int(input(\"Patient ID: \"))\n",
+        "            name = input(\"Name: \")\n",
+        "            disease = input(\"Disease: \")\n",
+        "            rec = [pid, name, disease]\n",
+        "            pickle.dump(rec, fobj)\n",
+        "    except Exception as e:\n",
+        "        print(\"Error:\", e)\n",
+        "    finally:\n",
+        "        fobj.close()\n",
+        "def countrec():\n",
+        "    fobj = open(\"PATIENTS.dat\", \"rb\")\n",
+        "    count = 0\n",
+        "    try:\n",
+        "        while True:\n",
+        "            rec = pickle.load(fobj)\n",
+        "            if rec[2] == \"COVID-19\":\n",
+        "                print(rec)\n",
+        "                count += 1\n",
+        "    except EOFError:\n",
+        "        pass\n",
+        "    finally:\n",
+        "        fobj.close()\n",
+        "    print(\"\\nTotal number of COVID-19 patients:\", count)\n",
+        "WriteRec()\n",
+        "countrec()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SuaUx8DzT1Xs",
+        "outputId": "7d448b10-1a16-4b49-9acc-cb0fe964f527"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "How many records to add? : 2\n",
+            "\n",
+            "Enter patient details:\n",
+            "Patient ID: 11\n",
+            "Name: ram\n",
+            "Disease: COVID-19\n",
+            "\n",
+            "Enter patient details:\n",
+            "Patient ID: 12\n",
+            "Name: sam\n",
+            "Disease: hiv\n",
+            "[11, 'ram', 'COVID-19']\n",
+            "\n",
+            "Total number of COVID-19 patients: 1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import math\n",
+        "def Square (num):\n",
+        "\tS=math.pow (num, 2)\n",
+        "\treturn S\n",
+        "def Log (num):\n",
+        "\tS=math.log10 (num)\n",
+        "\treturn S\n",
+        "def Quad (X, Y):\n",
+        "\tS=math.sqrt(X**2 + Y**2)\n",
+        "\treturn S\n",
+        "print (\"The Square of a Number is:\", Square(5))\n",
+        "print (\"The Log of a Number is:\", Log(10))\n",
+        "print(\"The Quad of a Number is:\", Quad(5,2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xdXM_sRZYCmu",
+        "outputId": "2eac3486-af67-491b-9681-ed5b27a0c571"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The Square of a Number is: 25.0\n",
+            "The Log of a Number is: 1.0\n",
+            "The Quad of a Number is: 5.385164807134504\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "while True:\n",
+        "\tChoice=input(\"\\nDo you want to roll the dice (y/n): \")\n",
+        "\tno=random. randint (1, 6)\n",
+        "\tif Choice=='y':\n",
+        "\t\tprint(\"\\nYour Number is:\", no)\n",
+        "\telse:\n",
+        "\t\tbreak"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sDl5Uvq1Z2FI",
+        "outputId": "b3e4c006-5fa6-45ce-bc71-95ccd09bc098"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "\n",
+            "Do you want to roll the dice (y/n): y\n",
+            "\n",
+            "Your Number is: 3\n",
+            "\n",
+            "Do you want to roll the dice (y/n): y\n",
+            "\n",
+            "Your Number is: 5\n",
+            "\n",
+            "Do you want to roll the dice (y/n): y\n",
+            "\n",
+            "Your Number is: 6\n",
+            "\n",
+            "Do you want to roll the dice (y/n): n\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#armstrong\n",
+        "n=int(input(\"Enter a number: \"))\n",
+        "num=n\n",
+        "b=[]\n",
+        "q=str(n)\n",
+        "a=list(q)\n",
+        "l=len(a)\n",
+        "for i in range(l):\n",
+        "    n1=n%10\n",
+        "    n=n//10\n",
+        "    b.append(n1)\n",
+        "print(b)\n",
+        "s=0\n",
+        "for i in b:\n",
+        "    s=s+(i**3)\n",
+        "print(\"sum is=>\",s)\n",
+        "if s==num:\n",
+        "    print(\"It is an armstrong number\")\n",
+        "else:\n",
+        "    print(\"It is not an armstrong number\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MPsb8aPibzek",
+        "outputId": "c6f7feaf-b2f0-4d83-d350-7ec17c6a6f7e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 153\n",
+            "[3, 5, 1]\n",
+            "sum is=> 153\n",
+            "It is an armstrong number\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pickle\n",
+        "marks = []\n",
+        "for i in range(5):\n",
+        "    marks.append(int(input(\"Enter marks: \")))\n",
+        "with open(\"marks.dat\", \"wb\") as f:\n",
+        "    pickle.dump(marks, f)\n",
+        "with open(\"marks.dat\", \"rb\") as f:\n",
+        "    data = pickle.load(f)\n",
+        "print(\"Highest marks =\", max(data))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IrVaUKgOrzdL",
+        "outputId": "7616fa38-8827-4f8d-ef7d-f1207226b82d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter marks: 98\n",
+            "Enter marks: 71\n",
+            "Enter marks: 31\n",
+            "Enter marks: 18\n",
+            "Enter marks: 69\n",
+            "Highest marks = 98\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pickle\n",
+        "a=open(\"journal.txt\",\"w\")\n",
+        "j=[]\n",
+        "while True:\n",
+        "    dob=input(\"Enter date in format [YYYY-MM-DD]:\")\n",
+        "    mood=input(\"Enter mood (happy/sad/neutral):\")\n",
+        "    note=input(\"Enter a note:\")\n",
+        "    a.write(dob)\n",
+        "    a.write('\\t')\n",
+        "    a.write(mood)\n",
+        "    a.write('\\t')\n",
+        "    a.write(note)\n",
+        "    a.write('\\n')\n",
+        "    ch=int(input(\"Enter 1 to continue and 0 to break:\"))\n",
+        "    if ch==1:\n",
+        "        continue\n",
+        "    elif ch==0:\n",
+        "        break\n",
+        "    else:\n",
+        "        print(\"Incorrect value. Please try again!\")\n",
+        "a.close()\n",
+        "b=open(\"journal.txt\",\"r\")\n",
+        "i=0\n",
+        "while True:\n",
+        "    c=b.readline()\n",
+        "    print(c)\n",
+        "    if not c:\n",
+        "        break\n",
+        "    i=i+1\n",
+        "print(\"Count:\",i)\n",
+        "b.close()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6S-hsUttxyUm",
+        "outputId": "1d8a45fb-e24f-47e6-9b86-9fb5b26377a4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter date in format [YYYY-MM-DD]:2008-03-18\n",
+            "Enter mood (happy/sad/neutral):happy\n",
+            "Enter a note:my CS Project\n",
+            "Enter 1 to continue and 0 to break:0\n",
+            "2008-03-18\thappy\tmy CS Project\n",
+            "\n",
+            "\n",
+            "Count: 1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=open(\"data.fl\",\"w\")\n",
+        "a.write(\"abc\")\n",
+        "a.close()\n",
+        "fp1=open(\"data.fl\",\"r\")\n",
+        "data=fp1.readlines()\n",
+        "print(type(data))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-dOaG5Mf0bjh",
+        "outputId": "d5ca95c6-06fa-4810-946a-1635a8e14e37"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<class 'list'>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=open(\"a1.txt\",\"w\")\n",
+        "a.write(\"abc de\\nfg hij\\nklmnop qr\")\n",
+        "a.close()\n",
+        "b=open(\"a1.txt\",\"r\")\n",
+        "l1=b.read(3)\n",
+        "print(l1)\n",
+        "tx1=b.read(5)\n",
+        "print(tx1)\n",
+        "print(\"RESULT IS:\",b.tell())\n",
+        "b.seek(0)\n",
+        "print(b.read(2))\n",
+        "print(\"RESULT IS:\",b.tell())\n",
+        "b.close()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1s3ysi2d1oRb",
+        "outputId": "e1680954-9003-4c84-f786-381cdde65823"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "abc\n",
+            " de\n",
+            "f\n",
+            "RESULT IS: 8\n",
+            "ab\n",
+            "RESULT IS: 2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=open(\"data.fl\",\"w\")\n",
+        "a.write(\"abcd\\nefg\\nhijk\\nlmnop\\nqrstuv\\nwxyz\")\n",
+        "a.close()\n",
+        "b=open(\"data.fl\",\"r\")\n",
+        "c=1\n",
+        "while True:\n",
+        "    ln=b.readline()\n",
+        "    if not ln:\n",
+        "        break\n",
+        "    print(c,ln,end=\"\")\n",
+        "    c=c+1\n",
+        "b.close()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZWDio-6d2npp",
+        "outputId": "3539cc13-2c50-4979-d3ab-27adc7f487ee"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1 abcd\n",
+            "2 efg\n",
+            "3 hijk\n",
+            "4 lmnop\n",
+            "5 qrstuv\n",
+            "6 wxyz"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=open(\"data.txt\",\"w\")\n",
+        "a.write(\"India is great\")\n",
+        "a.write(\"\\n\")\n",
+        "a.write(\"We are great\")\n",
+        "a.close()\n",
+        "b=open(\"data.txt\",\"r\")\n",
+        "d1=b.read(5)\n",
+        "for i in d1:\n",
+        "    if i in \"AEIOUaeiou\":\n",
+        "        print(i, \"is a vowel\")\n",
+        "    else:\n",
+        "        print(i, end=\" \")\n",
+        "b.close()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "q5Att5Gd3z_q",
+        "outputId": "aaf7de7e-1908-4e5b-bf5f-eca17041f9f5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "I is a vowel\n",
+            "n d i is a vowel\n",
+            "a is a vowel\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pickle\n",
+        "strings = [\"radar\", \"hello\", \"level\", \"python\"]\n",
+        "with open(\"words.dat\", \"wb\") as f:\n",
+        "\tpickle.dump(strings, f)\n",
+        "with open(\"words.dat\", \"rb\") as f:\n",
+        "\tdata = pickle.load(f)\n",
+        "for s in data:\n",
+        "\tif s == s[::-1]:\n",
+        "\t\tprint(\"Palindrome:\", s)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IxpCmmPU5Inl",
+        "outputId": "95b5a6c4-361e-4e5e-c7f0-465b0cb0c357"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Palindrome: radar\n",
+            "Palindrome: level\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "stack=[10,20,30]\n",
+        "stack.pop()\n",
+        "print(stack)\n",
+        "stack.pop()\n",
+        "print(stack)\n",
+        "stack.pop()\n",
+        "print(stack)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bcg0Q6pg6uH5",
+        "outputId": "3dbb3236-f720-4ed0-944e-7eaed09c9dfe"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[10, 20]\n",
+            "[10]\n",
+            "[]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "stack=[]\n",
+        "n=int(input(\"Enter number of elements:\"))\n",
+        "for i in range(n):\n",
+        "    element=int(input(\"Enter element:\"))\n",
+        "    stack.append(element)\n",
+        "print(\"Stack elements are:\")\n",
+        "for i in range(len(stack)-1,-1,-1):\n",
+        "    print(stack[i])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pl3lNY6R7u8i",
+        "outputId": "7cb5ad4e-49f7-4e1c-f7b4-a9d196c37013"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter number of elements:3\n",
+            "Enter element:711\n",
+            "Enter element:183\n",
+            "Enter element:3110\n",
+            "Stack elements are:\n",
+            "3110\n",
+            "183\n",
+            "711\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "stack=[]\n",
+        "n=int(input(\"Enter number of elements:\"))\n",
+        "def pushElement():\n",
+        "    for i in range(n):\n",
+        "        element=int(input(\"Enter element:\"))\n",
+        "        stack.append(element)\n",
+        "pushElement()\n",
+        "print(stack)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TbbheBAZ9Ibu",
+        "outputId": "ccb2f29e-e3e8-4c99-ba12-cd17e463c01f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter number of elements:3\n",
+            "Enter element:24\n",
+            "Enter element:44\n",
+            "Enter element:43\n",
+            "[24, 44, 43]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "months=[]\n",
+        "n=int(input(\"Enter number of months:\"))\n",
+        "for i in range(1,n+1):\n",
+        "    month=input(\"Enter month:\")\n",
+        "    months.append(month)\n",
+        "print(months)\n",
+        "def popElement():\n",
+        "    if not months:\n",
+        "        print(\"Stack is empty\")\n",
+        "    else:\n",
+        "        n=months.pop()\n",
+        "        print(\"Element popped from stack\")\n",
+        "popElement()\n",
+        "print(months)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NP7ty_aCM6Eq",
+        "outputId": "5664b750-ef94-40d6-86bc-146f76eec8ad"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter number of months:3\n",
+            "Enter month:march\n",
+            "Enter month:october\n",
+            "Enter month:november\n",
+            "['march', 'october', 'november']\n",
+            "Element popped from stack\n",
+            "['march', 'october']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "stack = []\n",
+        "T = -1\n",
+        "def pushElement():\n",
+        "    global T\n",
+        "    while True:\n",
+        "        element = input(\"Enter element (or 'q' to quit): \")\n",
+        "        if element.lower() == 'q':\n",
+        "            break\n",
+        "        try:\n",
+        "            num = int(element)\n",
+        "            stack.append(num)\n",
+        "            T += 1\n",
+        "            print(\"Element pushed into stack\")\n",
+        "        except ValueError:\n",
+        "            print(\"Invalid input! Enter an integer.\")\n",
+        "    print(\"Final stack:\", stack)\n",
+        "pushElement()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_tyu4G_bQdlQ",
+        "outputId": "5ccee283-c289-48ba-cdc3-515ee674cc80"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter element (or 'q' to quit): 112\n",
+            "Element pushed into stack\n",
+            "Enter element (or 'q' to quit): 211\n",
+            "Element pushed into stack\n",
+            "Enter element (or 'q' to quit): q\n",
+            "Final stack: [112, 211]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "stack = []\n",
+        "n = int(input(\"Enter number of numbers to push into stack: \"))\n",
+        "for i in range(n):\n",
+        "    num = int(input(\"Enter number: \"))\n",
+        "    stack.append(num)\n",
+        "print(\"Stack:\", stack)\n",
+        "if len(stack) >= 2:\n",
+        "    a = stack.pop()\n",
+        "    b = stack.pop()\n",
+        "    add = a + b\n",
+        "    print(f\"{b} + {a} = {add}\")\n",
+        "    sub = b - a\n",
+        "    print(f\"{b} - {a} = {sub}\")\n",
+        "    mul = a * b\n",
+        "    print(f\"{b} * {a} = {mul}\")\n",
+        "    if a != 0:\n",
+        "        div = b / a\n",
+        "        print(f\"{b} / {a} = {div}\")\n",
+        "    else:\n",
+        "        print(\"Cannot divide by zero!\")\n",
+        "else:\n",
+        "    print(\"Need at least 2 numbers in stack for operations.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kYIPppL_SVYQ",
+        "outputId": "6c08484a-648e-4383-9794-2b82ac3aa286"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter number of numbers to push into stack: 2\n",
+            "Enter number: 12\n",
+            "Enter number: 34\n",
+            "Stack: [12, 34]\n",
+            "12 + 34 = 46\n",
+            "12 - 34 = -22\n",
+            "12 * 34 = 408\n",
+            "12 / 34 = 0.35294117647058826\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "stack = []\n",
+        "exp = input(\"Enter a postfix expression (e.g. 23+5*): \")\n",
+        "for ch in exp:\n",
+        "    if ch.isdigit():\n",
+        "        stack.append(int(ch))\n",
+        "    else:\n",
+        "        b = stack.pop()\n",
+        "        a = stack.pop()\n",
+        "        if ch == '+':\n",
+        "            stack.append(a + b)\n",
+        "        elif ch == '-':\n",
+        "            stack.append(a - b)\n",
+        "        elif ch == '*':\n",
+        "            stack.append(a * b)\n",
+        "        elif ch == '/':\n",
+        "            stack.append(a / b)\n",
+        "print(\"Result of expression:\", stack.pop())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rhVDT7ixUX5H",
+        "outputId": "fae69529-ff9a-4492-e514-51b9ea5aaf0a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a postfix expression (e.g. 23+5*): 23+7*8*\n",
+            "Result of expression: 280\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "MAX = 3\n",
+        "stack = []\n",
+        "for i in range(4):\n",
+        "    if len(stack) >= MAX:\n",
+        "        print(\"Stack Overflow! Cannot push\", i+1)\n",
+        "    else:\n",
+        "        stack.append(i+1)\n",
+        "        print(i+1, \"pushed\")\n",
+        "for i in range(4):\n",
+        "    if not stack:\n",
+        "        print(\"Stack Underflow! Cannot pop\")\n",
+        "    else:\n",
+        "        print(stack.pop(), \"popped\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BqwEmPveYMxp",
+        "outputId": "2161a28c-dd72-4fee-b43b-00231afe236c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1 pushed\n",
+            "2 pushed\n",
+            "3 pushed\n",
+            "Stack Overflow! Cannot push 4\n",
+            "3 popped\n",
+            "2 popped\n",
+            "1 popped\n",
+            "Stack Underflow! Cannot pop\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "words=(\"Python\",\"Cobol\",\"C++\",\"Java\",\"Visual Studio\",\"MySql\",\"Fortran\")\n",
+        "wordu=random.choice(words)\n",
+        "correct=word\n",
+        "correct=correct.lower()\n",
+        "jumble=\"\"\n",
+        "while word:\n",
+        "    position=random.randrange(len(word))\n",
+        "    jumble=jumble+word[position]\n",
+        "    word=word[:position]+word[(position+1):]\n",
+        "    print(\"Welcome to Word Jumble Game! Unscrable the letters to make a word.\")\n",
+        "    print(\"(Note. Press the enter key at prompt to quit.)\")\n",
+        "    print(\"The jumble word is:\",jumble)\n",
+        "    guess=input(\"\\nPlease enter again your guess:\")\n",
+        "    while (guess!=correct) and (guess!=\"\"):\n",
+        "        print(\"Sorry, %s is not exactly the jumble word\"%jumble)\n",
+        "        guess=input(\"Please enter again your guess:\")\n",
+        "        guess=guess.lower()\n",
+        "    if guess==correct:\n",
+        "        print(\"That's it! You've guessed it!\\n\")\n",
+        "    print(\"Thanks for playing\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "w0zjJ64weV-h",
+        "outputId": "0a45c1e4-7275-4d1f-ae1a-11bfcb8f4902"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Welcome to Word Jumble Game! Unscrable the letters to make a word.\n",
+            "(Note. Press the enter key at prompt to quit.)\n",
+            "The jumble word is: a\n",
+            "Sorry, a is not exactly the jumble word\n",
+            "That's it! You've guessed it!\n",
+            "\n",
+            "Thanks for playing\n",
+            "Welcome to Word Jumble Game! Unscrable the letters to make a word.\n",
+            "(Note. Press the enter key at prompt to quit.)\n",
+            "The jumble word is: aa\n",
+            "\n",
+            "Please enter again your guess:aa\n",
+            "Sorry, aa is not exactly the jumble word\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "kyuY1p0K8XTt"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pickle\n",
+        "a=open(\"journal.txt\",\"w\")\n",
+        "j=[]\n",
+        "while True:\n",
+        "    dob=input(\"Enter date in format [YYYY-MM-DD]:\")\n",
+        "    mood=input(\"Enter mood (happy/sad/neutral):\")\n",
+        "    note=input(\"Enter a note:\")\n",
+        "    a.write(dob)\n",
+        "    a.write('\\t')\n",
+        "    a.write(mood)\n",
+        "    a.write('\\t')\n",
+        "    a.write(note)\n",
+        "    a.write('\\n')\n",
+        "    ch=int(input(\"Enter 1 to continue and 0 to break:\"))\n",
+        "    if ch==1:\n",
+        "        continue\n",
+        "    elif ch==0:\n",
+        "        break\n",
+        "    else:\n",
+        "        print(\"Incorrect value. Please try again!\")\n",
+        "a.close()\n",
+        "b=open(\"journal.txt\",\"r\")\n",
+        "i=0\n",
+        "while True:\n",
+        "    c=b.readline()\n",
+        "    print(c)\n",
+        "    if not c:\n",
+        "        break\n",
+        "    i=i+1\n",
+        "print(\"Count:\",i)\n",
+        "b.close()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FEzLOKHyjYGL",
+        "outputId": "a1314cd8-ba91-46c5-d493-67e3df95c279"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter date in format [YYYY-MM-DD]:2008-11-07\n",
+            "Enter mood (happy/sad/neutral):happy\n",
+            "Enter a note:hello\n",
+            "Enter 1 to continue and 0 to break:0\n",
+            "2008-11-07\thappy\thello\n",
+            "\n",
+            "\n",
+            "Count: 1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num = int(input(\"Enter a number: \"))\n",
+        "\n",
+        "if num % 10 == 7 or num % 7 == 0:\n",
+        "    print(num, \"is a Buzz Number\")\n",
+        "else:\n",
+        "    print(num, \"is NOT a Buzz Number\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JfTCm0X4ypyV",
+        "outputId": "e7269d47-82fc-4021-dd6c-b70f68b9e443"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 63\n",
+            "63 is a Buzz Number\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=[7,11,18,3,31,10,8]\n",
+        "l=len(a)\n",
+        "for i in range(1,l):\n",
+        "\tvalue=a[i]\n",
+        "\tpos=i\n",
+        "\twhile pos>0 and value<a[pos-1]:\n",
+        "\t\ta[pos]=a[pos-1]\n",
+        "\t\tpos=pos-1\n",
+        "\t\ta[pos]=value\n",
+        "print(a)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xeQ0-iSXxcYg",
+        "outputId": "55d1a0b5-1775-48d1-cb7a-50fb7568ae04"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[3, 7, 8, 10, 11, 18, 31]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num = int(input(\"Enter a number: \"))\n",
+        "square = num * num\n",
+        "if str(square).endswith(str(num)):\n",
+        "    print(num, \"is an Automorphic Number\")\n",
+        "else:\n",
+        "    print(num, \"is NOT an Automorphic Number\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nZt-eIJ2zj0e",
+        "outputId": "b2fc697c-5158-46bb-8cd6-fd86701736ed"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 6\n",
+            "6 is an Automorphic Number\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
