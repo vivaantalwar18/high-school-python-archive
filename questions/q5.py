@@ -1,0 +1,6 @@
+tup1=(400,100,700,300)
+tup2=("maths","english","science")
+print('minimum element in tup1:',min(tup1))
+print('maximum element in tup1:',max(tup1))
+print('minimum element in tup2:',min(tup2))
+print('maximum element in tup2:',max(tup2))

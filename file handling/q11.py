@@ -1,0 +1,6 @@
+a=open("data.fl","w")
+a.write("abc")
+a.close()
+fp1=open("data.fl","r")
+data=fp1.readlines()
+print(type(data))

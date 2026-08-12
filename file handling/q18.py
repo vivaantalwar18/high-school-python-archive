@@ -1,0 +1,11 @@
+f1=open('poem.txt',"w")
+f1.write("twinkle twinkle little star,\n")
+f1.write("how i wonder what you are,\n")
+f1.write("up above the world so high,\n")
+f1.write("like a diamond in the sky,\n")
+f1.close()
+f1=open('poem.txt',"r")
+lst=f1.readlines()
+for i in lst:
+  print(i)
+f1.close()
